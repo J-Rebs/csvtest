@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptopoly Game</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- My Own CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="lib/dice.css">
+</head>
+
+
+<body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+
+  <script src="js files/property.js"></script>
+  <script src="js files/player.js"></script>
+  <script src="js files/gameboard.js"></script>
+  
+
+  <session id="profile">
+    <ul id='player1'>
+      <li class="name">Name: <div></div></li>
+      <li class="money">Money: <div></div></li>
+      <li class="location">Location: <div></div></li>
+      <li class="jail">Jail: <div></div></li>
+      <li class="property">Property: <div></div></li>
+      <li >message: </li>
+      <ul class="message"></ul>
+    </ul>
+  </session>
+
+  <session id="gameboard">
+    <!-- Source: https://icodemag.com/3d-rolling-dice-css-javascript/ -->
+    <div class = "scene">
+      <div class="cube">
+        <div class="cube__face cube__face--1">1</div>
+        <div class="cube__face cube__face--2">2</div>
+        <div class="cube__face cube__face--3">3</div>
+        <div class="cube__face cube__face--4">4</div>
+        <div class="cube__face cube__face--5">5</div>
+        <div class="cube__face cube__face--6">6</div>
+      </div>
+
+      <button class = "rollBtn">Roll</button>
+    </div>
+
+
+    <ul id="top">
+      <div class="square-grid top" id="grid0"></div>
+      <div class="grid" id="grid1"></div>
+      <div class="grid" id="grid2"></div>
+      <div class="grid" id="grid3"></div>
+      <div class="grid" id="grid4"></div>
+      <div class="grid" id="grid5"></div>
+      <div class="grid" id="grid6"></div>
+      <div class="grid" id="grid7"></div>
+      <div class="grid" id="grid8"></div>
+      <div class="grid" id="grid9"></div>
+    </ul>
+    <div class="square-grid right" id="grid10"></div>
+    <ul id="right">
+      <div class="grid" id="grid11"></div>
+      <div class="grid" id="grid12"></div>
+      <div class="grid" id="grid13"></div>
+      <div class="grid" id="grid14"></div>
+      <div class="grid" id="grid15"></div>
+      <div class="grid" id="grid16"></div>
+      <div class="grid" id="grid17"></div>
+      <div class="grid" id="grid18"></div>
+      <div class="grid" id="grid19"></div>
+    </ul>
+
+    <div class="square-grid bottom" id="grid20"></div>
+    <ul id="bottom">
+      <div class="grid" id="grid29"></div>
+      <div class="grid" id="grid28"></div>
+      <div class="grid" id="grid27"></div>
+      <div class="grid" id="grid26"></div>
+      <div class="grid" id="grid25"></div>
+      <div class="grid" id="grid24"></div>
+      <div class="grid" id="grid23"></div>
+      <div class="grid" id="grid22"></div>
+      <div class="grid" id="grid21"></div>
+    </ul>
+
+    <div class="square-grid left" id="grid30"></div>
+    <ul id="left">
+      <div class="grid" id="grid39"></div>
+      <div class="grid" id="grid38"></div>
+      <div class="grid" id="grid37"></div>
+      <div class="grid" id="grid36"></div>
+      <div class="grid" id="grid35"></div>
+      <div class="grid" id="grid34"></div>
+      <div class="grid" id="grid33"></div>
+      <div class="grid" id="grid32"></div>
+      <div class="grid" id="grid31"></div>
+    </ul>
+
+
+
+    <div id="chance-card"></div>
+    <div id="community-card"></div>
+
+  </session>
+
+  <section id="cryptomarket">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Crypto Name</th>
+          <th>Price</th>
+          <th>Change</th>
+          <th>Average Price</th>
+          <th># of Coins Purchased</th>
+          <th>Trade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- PLACEHOLDER -->
+        <tr>
+          <th>Dogecoin</th>
+          <td>$<span>100</span></td>
+          <td><span>+5%</span></td>
+          <td>$<span>90</span></td>
+          <td><span>10</span></td>
+          <td><button>Purchase</button></td>
+        </tr>
+        <tr>
+          <th>Bitcoin</th>
+          <td>$<span>100</span></td>
+          <td><span>+5%</span></td>
+          <td>$<span>90</span></td>
+          <td><span>10</span></td>
+          <td><button>Purchase</button></td>
+        </tr>
+        <tr>
+          <th>Gamecoin</th>
+          <td>$<span>100</span></td>
+          <td><span>+5%</span></td>
+          <td>$<span>90</span></td>
+          <td><span>10</span></td>
+          <td><button>Purchase</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <script src="lib/dice.js"></script>
+  <script src="js files/cryptoInfo.js"></script>
+
+  <script>
+  // public static void main(String[] args) {
+  propertyList = [];
+  playerList = [];
+  g = new gameboard(40,playerList)
+
+  let person = prompt("Please enter your name", "Test");
+  let name;
+  if (person == null || person == "") {
+    name = "User cancelled the prompt.";
+  } else {
+    console.log(person)
+    playerList.push(new player(person));
+  }
+
+
+
+  // // let turns = 0;
+  // // for (let i = 0; i < turns; i++) {
+  //   // roll dice
+  //   for (let j = 0; j < playerList.length; j++) {
+  //     p = playerList[j];
+  //     if (p.jail <= 0) {
+  //
+  //       move = rollDice();
+  //
+  //       // move and update location
+  //       console.log(p)
+  //       p.updateLocation(move);
+  //
+  //       // get current property
+  //       let currentProperty = g.board.get(p.getLocation());
+  //
+  //       console.log("Player " + p.getName() + " moves " + move + " steps to position "
+  //       + p.getLocation() + "(" + currentProperty.getColor() + ")");
+  //
+  //       let type = currentProperty.getType();
+  //
+  //       if (type=="chance") {
+  //         p.chance(playerList);
+  //       }
+  //       if (p.jail > 0)
+  //       break;
+  //
+  //       // if (type=="realestate") {
+  //       //   if (!currentProperty.owned) { // if no one owns property --> buy
+  //       //     console.log("Do you want to buy " + currentProperty.getInfo() + " for "
+  //       //     + currentProperty.getMarketPrice() + "? yes:1, no:0");
+  //       //     let answer = Integer.parseInt(scanner());
+  //       //     if (answer == 1) {
+  //       //       currentProperty.buyProperty(p);
+  //       //       p.addProperty(currentProperty);
+  //       //     }
+  //       //   } else {
+  //       //     if (currentProperty.getOwner().equals(p)) { // if player owns --> buy more
+  //       //       System.out.println("Do you want to buy more " + currentProperty.getInfo() + " for "
+  //       //       + currentProperty.getMarketPrice() + "? yes:1, no:0");
+  //       //       int answer = Integer.parseInt(scanner());
+  //       //       if (answer == 1) {
+  //       //         if (checkColor(currentProperty, p)) {
+  //       //           currentProperty.buyProperty(p);
+  //       //           p.addProperty(currentProperty);
+  //       //         }
+  //       //       }
+  //       //     } else { // otherwise pay rent
+  //       //       currentProperty.payRent(p);
+  //       //     }
+  //       //   }
+  //       // } else if (type.equals("gotojail")) {
+  //       //   if (!p.jailFreeCard) {
+  //       //     p.setJail();
+  //       //     p.setLocation(10);
+  //       //   } else
+  //       //   p.loseJailFreeCard();
+  //       // } else if (type.equals("nft")) {
+  //       //   System.out.println(p.name + " bought an NFT  for $200!");
+  //       //   p.subMoney(200);
+  //       // } else if (type.equals("tax")) {
+  //       //   System.out.println("It's tax season!");
+  //       //   p.subMoney(p.getMoney() / 10);
+  //       // } else if (type.equals("community")) {
+  //       //   p.community(playerList);
+  //       // }
+  //
+  //     } else {
+  //       console.log(p.name + " is in jail and has to wait " + p.jail + " turns!");
+  //       p.jail -= 1;
+  //     }
+  //
+  //     console.log("Player " + p.getName() + " has $" + p.getMoney());
+  //     // g.printGameboard();
+  //   }
+  // }
+  </script>
+</body>
+
+</html>
