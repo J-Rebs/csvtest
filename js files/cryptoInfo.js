@@ -29,10 +29,7 @@ console.log(arrOfCrypto);
 // })
 
 
-
-
-
-
+function test(){
 let parse = document.createElement('script');
 
 parse.onload = function(){
@@ -50,6 +47,10 @@ parse.onload = function(){
 parse.src = "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js";
 
 document.head.appendChild(parse);
+}
+
+
+
 
 
 
